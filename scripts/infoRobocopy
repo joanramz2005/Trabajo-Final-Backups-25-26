@@ -1,0 +1,16 @@
+| Opción            | Qué hace                                                        | Ejemplo             |
+| ----------------- | --------------------------------------------------------------- | ------------------- |
+| `/S`              | Copia subcarpetas, excepto vacías                               | `/S`                |
+| `/E`              | Copia todas las subcarpetas, incluidas vacías                   | `/E`                |
+| `/MIR`            | Sincroniza el destino con el origen (borra archivos eliminados) | `/MIR`              |
+| `/R:n`            | Número de reintentos en caso de error (por defecto 1 millón)    | `/R:3`              |
+| `/W:n`            | Tiempo de espera entre reintentos en segundos (por defecto 30)  | `/W:5`              |
+| `/MT:n`           | Copia usando múltiples hilos (por defecto 8, max 128)           | `/MT:16`            |
+| `/LOG:<archivo>`  | Guarda toda la salida en un archivo de log                      | `/LOG:"backup.log"` |
+| `/TEE`            | Muestra salida en pantalla y en log al mismo tiempo             | `/TEE`              |
+| `/XD <carpeta>`   | Excluye carpetas específicas                                    | `/XD temp`          |
+| `/XF <archivo>`   | Excluye archivos específicos                                    | `/XF *.tmp`         |
+| `/COPY:DAT`       | Qué atributos copiar: D=Datos, A=Atributos, T=Timestamp         | `/COPY:DAT`         |
+| `/MAXAGE:n`       | Solo archivos modificados hace menos de n días                  | `/MAXAGE:7`         |
+| `/MINAGE:n`       | Solo archivos más antiguos que n días                           | `/MINAGE:30`        |
+| `/LOG+:<archivo>` | Añade la salida al final del log existente                      | `/LOG+:backup.log`  |

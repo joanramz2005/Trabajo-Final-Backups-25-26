@@ -1,0 +1,7 @@
+$source = "C:\Datos"
+$destination = "D:\BackUps\Datos"
+
+$logPath= "D:\BackUps\Datos"
+if (-not (Test-Path $logPath)) { New-Item -Path $logPath -ItemType Directory }
+
+$logfile = "$logPath\backup_$(Get-Date -Format 'yyyyMMdd_HHmmss').log"

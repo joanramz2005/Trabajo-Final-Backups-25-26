@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #595a59;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -21,6 +21,9 @@ header {
 nav {
     background-color: #333;
     overflow: hidden;
+    display: flex;         
+    justify-content:center;
+    align-items: center;   
 }
 
 nav a {

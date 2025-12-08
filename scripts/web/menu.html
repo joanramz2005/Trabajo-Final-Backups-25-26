@@ -3,51 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KeepNas - Soluciones de Backup</title>
+    <title>KeepNas - Soluciones de Backup Seguras</title>
     <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💾</text></svg>">
 </head>
 <body>
-    <header>
-        <h1>KeepNas</h1>
-    </header>
-    
-    <nav>
-        <a href="#services">Servicios</a>
-        <a href="#about">Sobre Nosotros</a>
-        <a href="#contact">Contacto</a>
-    </nav>
-
-    <section id="services">
-        <h2>Nuestros Servicios</h2>
-        <div class="services">
-            <div class="service">
-                <h3>Backup en la Nube</h3>
-                <p>Almacenamiento seguro y accesible desde cualquier lugar.</p>
+    <div class="container">
+        <!-- Header con logo y navegación -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#home">
+                        <img src="keepnas.png" alt="KeepNas Logo" class="logo-img">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="#home" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="#services" class="nav-link">
+                        <i class="fas fa-server"></i>
+                        <span>Servicios</span>
+                    </a>
+                    <a href="#about" class="nav-link">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Sobre Nosotros</span>
+                    </a>
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contacto</span>
+                    </a>
+                </nav>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <div class="service">
-                <h3>Recuperación de Datos</h3>
-                <p>Recupera tus archivos rápidamente ante cualquier fallo.</p>
+        </header>
+
+        <!-- Sección Hero -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">Protege tus datos con <span class="highlight">confianza</span></h2>
+                    <p class="hero-subtitle">Soluciones de backup seguras, rápidas y confiables para empresas y particulares</p>
+                    <div class="cta-buttons">
+                        <a href="#services" class="btn btn-primary">
+                            <i class="fas fa-shield-alt"></i> Conoce nuestros servicios
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-comments"></i> Contáctanos
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="cloud-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                </div>
             </div>
-            <div class="service">
-                <h3>Backup Automático</h3>
-                <p>Configura copias automáticas y olvídate de preocuparte.</p>
+        </section>
+
+        <!-- Sección de servicios -->
+        <section id="services" class="services-section">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros <span>Servicios</span></h2>
+                <p class="section-subtitle">Soluciones diseñadas para proteger lo más valioso: tu información</p>
             </div>
-        </div>
-    </section>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Backup en la Nube</h3>
+                    <p class="service-description">Almacenamiento seguro, accesible desde cualquier lugar y dispositivo con encriptación de última generación.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Encriptación AES-256</li>
+                        <li><i class="fas fa-check-circle"></i> Acceso multiplataforma</li>
+                        <li><i class="fas fa-check-circle"></i> Escalable según necesidades</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card featured">
+                    <div class="service-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h3 class="service-title">Recuperación de Datos</h3>
+                    <p class="service-description">Recupera tus archivos rápidamente ante cualquier fallo con nuestro sistema de restauración inteligente.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Recuperación en minutos</li>
+                        <li><i class="fas fa-check-circle"></i> Versionado de archivos</li>
+                        <li><i class="fas fa-check-circle"></i> Soporte 24/7</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title">Backup Automático</h3>
+                    <p class="service-description">Configura copias automáticas y olvídate de preocuparte. Tu información se respalda sin intervención.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Programación flexible</li>
+                        <li><i class="fas fa-check-circle"></i> Notificaciones de estado</li>
+                        <li><i class="fas fa-check-circle"></i> Monitoreo constante</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <section id="about">
-        <h2>Sobre KeepNas</h2>
-        <p>KeepNas es tu aliado en la protección de datos. Nuestro objetivo es ofrecer soluciones de backup fiables, rápidas y seguras para particulares y empresas. Con años de experiencia, garantizamos que tus datos siempre estarán a salvo.</p>
-    </section>
+        <!-- Sección sobre nosotros -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre <span>KeepNas</span></h2>
+                    <p class="about-description">KeepNas es tu aliado estratégico en la protección de datos. Con más de 10 años de experiencia en el sector, nos especializamos en ofrecer soluciones de backup fiables, rápidas y seguras para particulares y empresas.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">+500</div>
+                            <div class="stat-label">Clientes satisfechos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Tiempo activo</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Años de experiencia</div>
+                        </div>
+                    </div>
+                    
+                    <p class="about-mission">Nuestra misión es garantizar que tus datos siempre estén seguros, disponibles y protegidos contra cualquier eventualidad, para que puedas enfocarte en lo que realmente importa: hacer crecer tu negocio.</p>
+                </div>
+                <div class="about-image">
+                    <div class="about-icon-container">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact">
-        <h2>Contacto</h2>
-        <p>Correo: info@keepnas.com</p>
-        <p>Teléfono: +34 600 123 456</p>
-    </section>
+        <!-- Sección de contacto -->
+        <section id="contact" class="contact-section">
+            <div class="section-header">
+                <h2 class="section-title">Contácta<span>nos</span></h2>
+                <p class="section-subtitle">Estamos aquí para ayudarte a proteger lo que más importa</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-title">Correo Electrónico</h3>
+                        <p class="contact-detail">info@keepnas.com</p>
+                        <p class="contact-detail">soporte@keepnas.com</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="contact-title">Teléfono</h3>
+                        <p class="contact-detail">+34 600 123 456</p>
+                        <p class="contact-detail">Lunes a Viernes: 9:00 - 18:00</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="contact-title">Oficina Central</h3>
+                        <p class="contact-detail">Calle Tecnología, 123</p>
+                        <p class="contact-detail">28015 Madrid, España</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 class="form-title">¿Listo para empezar?</h3>
+                    <p class="form-subtitle">Déjanos tus datos y nos pondremos en contacto contigo en menos de 24 horas.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="¿Cómo podemos ayudarte?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 KeepNas. Todos los derechos reservados.</p>
-    </footer>
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-database"></i>
+                    <h2>Keep<span>Nas</span></h2>
+                    <p class="footer-tagline">Protegiendo tu información, respaldando tu éxito.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <a href="#home">Inicio</a>
+                    <a href="#services">Servicios</a>
+                    <a href="#about">Sobre Nosotros</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+                
+                <div class="footer-social">
+                    <h3 class="footer-title">Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 KeepNas. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+                <p class="made-with">Hecho con <i class="fas fa-heart"></i> para proteger tus datos</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="menu.js"></script>
 </body>
 </html>

@@ -586,6 +586,16 @@ h1, h2, h3, h4 {
     color: #ef4444;
 }
 
+
+/* --- Ocultar header al hacer scroll --- */
+.main-header {
+    transition: transform 0.3s ease;
+}
+
+.main-header.hide-header {
+    transform: translateY(-100%);
+}
+
 /* Responsividad */
 @media (max-width: 992px) {
     .hero-content, .about-content, .contact-content {

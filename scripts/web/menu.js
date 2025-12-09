@@ -96,3 +96,20 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateStats);
     animateStats(); // Comprobar al cargar la página
 });
+// --- Ocultar/mostrar header según scroll ---
+let lastScrollY2 = window.scrollY;
+const header = document.querySelector('.main-header');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScrollY2) {
+        // Bajando → ocultar header
+        header.classList.add('hide-header');
+    } else {
+        // Subiendo → mostrar header
+        header.classList.remove('hide-header');
+    }
+
+    lastScrollY2 = currentScroll;
+});

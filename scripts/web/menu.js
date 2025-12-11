@@ -103,13 +103,29 @@ const header = document.querySelector('.main-header');
 window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
 
-    if (currentScroll > lastScrollY2) {
-        // Bajando → ocultar header
-        header.classList.add('hide-header');
-    } else {
-        // Subiendo → mostrar header
+    let lastScrollY2 = window.scrollY;
+const header = document.querySelector('.main-header');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    // Cuando estás arriba del todo, el header siempre visible
+    if (currentScroll <= 0) {
         header.classList.remove('hide-header');
+        lastScrollY2 = currentScroll;
+        return;
     }
+
+    // Lógica normal de ocultar/mostrar
+    if (currentScroll > lastScrollY2) {
+        header.classList.add('hide-header');   // Ocultar al bajar
+    } else {
+        header.classList.remove('hide-header'); // Mostrar al subir
+    }
+
+    lastScrollY2 = currentScroll;
+});
+
 
     lastScrollY2 = currentScroll;
 });

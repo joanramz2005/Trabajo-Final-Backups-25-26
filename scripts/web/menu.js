@@ -129,3 +129,13 @@ window.addEventListener('scroll', () => {
 
     lastScrollY2 = currentScroll;
 });
+// Lógica para pre-seleccionar el plan en el formulario
+document.querySelectorAll('.select-plan').forEach(button => {
+    button.addEventListener('click', function() {
+        const planName = this.getAttribute('data-plan');
+        const selector = document.getElementById('planSelector');
+        if(selector) {
+            selector.value = planName;
+        }
+    });
+});

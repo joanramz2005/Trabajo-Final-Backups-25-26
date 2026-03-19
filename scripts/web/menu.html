@@ -133,39 +133,36 @@
         </section>
 
         <!-- Sección de Contratación / Planes -->
-        <section id="pricing" class="services-section"
-            style="background-color: #f0f9ff; padding: 80px 0; border-radius: 25px; margin: 20px;">
+        <section id="pricing" class="pricing-section">
             <div class="section-header">
                 <h2 class="section-title">Planes de <span>Contratación</span></h2>
                 <p class="section-subtitle">Selecciona la protección que mejor se adapte a tu empresa</p>
             </div>
 
-            <div class="services-container"
-                style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 0 20px;">
-
-                <!-- Plan Básico -->
-                <div class="service-card" style="display: flex; flex-direction: column;">
-                    <h3 style="font-size: 1.8rem; color: var(--primary-color);">Personal</h3>
-                    <p style="font-size: 2rem; font-weight: bold; margin: 15px 0;">19€ <span
-                            style="font-size: 1rem; color: var(--gray-color);">/mes</span></p>
-                    <ul class="service-features" style="flex-grow: 1; margin-bottom: 20px;">
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>Personal</h3>
+                        <div class="price">19€<span>/mes</span></div>
+                    </div>
+                    <ul class="pricing-features">
                         <li><i class="fas fa-check-circle"></i> 1 Equipo Windows</li>
                         <li><i class="fas fa-check-circle"></i> 500GB Almacenamiento</li>
                         <li><i class="fas fa-check-circle"></i> Backup Automático</li>
+                        <li class="disabled"><i class="fas fa-times-circle"></i> Soporte 24/7</li>
                     </ul>
                     <a href="#contact" class="btn btn-secondary select-plan" data-plan="Personal">Elegir Plan</a>
                 </div>
 
-                <!-- Plan SME (Destacado) -->
-                <div class="service-card featured"
-                    style="display: flex; flex-direction: column; border: 2px solid var(--primary-color); transform: scale(1.05);">
-                    <div
-                        style="background: var(--primary-color); color: white; padding: 5px; font-size: 0.8rem; border-radius: 10px; margin-bottom: 10px;">
-                        RECOMENDADO</div>
-                    <h3 style="font-size: 1.8rem; color: var(--primary-color);">Empresa SME</h3>
-                    <p style="font-size: 2rem; font-weight: bold; margin: 15px 0;">49€ <span
-                            style="font-size: 1rem; color: var(--gray-color);">/mes</span></p>
-                    <ul class="service-features" style="flex-grow: 1; margin-bottom: 20px;">
+                <div class="pricing-card featured">
+                    <div class="popular-tag">RECOMENDADO</div>
+                    <div class="pricing-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Empresa SME</h3>
+                        <div class="price">49€<span>/mes</span></div>
+                    </div>
+                    <ul class="pricing-features">
                         <li><i class="fas fa-check-circle"></i> Hasta 5 Equipos</li>
                         <li><i class="fas fa-check-circle"></i> 2TB Almacenamiento</li>
                         <li><i class="fas fa-check-circle"></i> Anti-Ransomware Pro</li>
@@ -174,15 +171,17 @@
                     <a href="#contact" class="btn btn-primary select-plan" data-plan="Empresa SME">Contratar Ahora</a>
                 </div>
 
-                <!-- Plan Corporate -->
-                <div class="service-card" style="display: flex; flex-direction: column;">
-                    <h3 style="font-size: 1.8rem; color: var(--primary-color);">Corporate</h3>
-                    <p style="font-size: 2rem; font-weight: bold; margin: 15px 0;">99€ <span
-                            style="font-size: 1rem; color: var(--gray-color);">/mes</span></p>
-                    <ul class="service-features" style="flex-grow: 1; margin-bottom: 20px;">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Corporate</h3>
+                        <div class="price">99€<span>/mes</span></div>
+                    </div>
+                    <ul class="pricing-features">
                         <li><i class="fas fa-check-circle"></i> Equipos Ilimitados</li>
                         <li><i class="fas fa-check-circle"></i> Almacenamiento NAS</li>
-                        <li><i class="fas fa-check-circle"></i> Soporte 24/7</li>
+                        <li><i class="fas fa-check-circle"></i> Panel Central</li>
+                        <li><i class="fas fa-check-circle"></i> Soporte VIP 24/7</li>
                     </ul>
                     <a href="#contact" class="btn btn-secondary select-plan" data-plan="Corporate">Solicitar Info</a>
                 </div>
@@ -217,67 +216,69 @@
                 <h2 class="section-title">Contácta<span>nos</span></h2>
                 <p class="section-subtitle">Estamos aquí para ayudarte a proteger lo que más importa</p>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 class="contact-title">Correo Electrónico</h3>
-                        <p class="contact-detail">info@keepnas.com</p>
-                        <p class="contact-detail">soporte@keepnas.com</p>
-                    </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3 class="contact-title">Teléfono</h3>
-                        <p class="contact-detail">+34 600 123 456</p>
-                        <p class="contact-detail">Lunes a Viernes: 9:00 - 18:00</p>
-                    </div>
+            <!-- Contenedor alineado verticalmente -->
+            <div class="contact-content"
+                style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="contact-title">Oficina Central</h3>
-                        <p class="contact-detail">Calle Tecnología, 123</p>
-                        <p class="contact-detail">28015 Madrid, España</p>
-                    </div>
-                </div>
+                <!-- Formulario arriba -->
                 <div class="contact-form">
                     <h3 class="form-title">¿Listo para empezar?</h3>
                     <p class="form-subtitle">Déjanos tus datos y nos pondremos en contacto contigo en menos de 24 horas.
                     </p>
-
                     <form id="contactForm">
-                        <!-- Nuevo: Selector de Plan -->
                         <div class="form-group">
                             <select id="planSelector" required
-                                style="width: 100%; padding: 15px; border: 1px solid var(--gray-light); border-radius: var(--radius); font-family: 'Roboto', sans-serif; background-color: white; color: var(--gray-color); outline: none; cursor: pointer;">
+                                style="width: 100%;height: 40px; border: 1px solid var(--gray-light); border-radius: var(--radius); background-color: white; color: var(--gray-color); outline: none; cursor: pointer;">
                                 <option value="" disabled selected>Selecciona tu plan de backup</option>
                                 <option value="Personal">Plan Personal - 19€/mes</option>
                                 <option value="Empresa SME">Plan Empresa SME - 49€/mes</option>
                                 <option value="Corporate">Plan Corporate - 99€/mes</option>
                             </select>
                         </div>
-
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Nombre completo" required>
+                        <div class="form-group"><input type="text" id="name" placeholder="Nombre completo" required>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Correo electrónico" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" rows="4" placeholder="¿Cómo podemos ayudarte?"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                        </button>
+                        <div class="form-group"><input type="email" id="email" placeholder="Correo electrónico"
+                                required></div>
+                        <div class="form-group"><textarea id="message" rows="4"
+                                placeholder="¿Cómo podemos ayudarte?"></textarea></div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;"><i
+                                class="fas fa-paper-plane"></i> Enviar Mensaje</button>
                     </form>
                 </div>
+
+                
             </div>
+            <!-- Información de contacto debajo -->
+                <div class="contact-info" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 5%;">
+                    <div class="contact-card"
+                        style="display: flex; align-items: center; gap: 20px; padding: 20px; background: white; border-radius: var(--radius); box-shadow: var(--shadow);">
+                        <div class="contact-icon"><i class="fas fa-envelope" style="color: var(--primary-color);"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3 class="contact-title" style="margin-bottom: 0;">Correo Electrónico</h3>
+                            <p class="contact-detail">info@keepnas.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card"
+                        style="display: flex; align-items: center; gap: 20px; padding: 20px; background: white; border-radius: var(--radius); box-shadow: var(--shadow);">
+                        <div class="contact-icon"><i class="fas fa-phone" style="color: var(--primary-color);"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3 class="contact-title" style="margin-bottom: 0;">Teléfono</h3>
+                            <p class="contact-detail">+34 600 123 456</p>
+                        </div>
+                    </div>
+                    <div class="contact-card"
+                        style="display: flex; align-items: center; gap: 20px; padding: 20px; background: white; border-radius: var(--radius); box-shadow: var(--shadow);">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"
+                                style="color: var(--primary-color);"></i></div>
+                        <div class="contact-text">
+                            <h3 class="contact-title" style="margin-bottom: 0;">Oficina Central</h3>
+                            <p class="contact-detail">Calle Tecnología, 123, 28015 Madrid</p>
+                        </div>
+                    </div>
+                </div>
         </section>
 
     </div>

@@ -670,3 +670,100 @@ h1, h2, h3, h4 {
         padding: 25px;
     }
 }
+
+/* --- ESTILOS SECCIÓN PRECIOS --- */
+.pricing-section {
+    padding: 80px 0;
+    background-color: #f0f9ff;
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Resaltar Plan SME */
+.pricing-card.featured {
+    border: 3px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.pricing-header i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+    color: var(--dark-color);
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--gray-color);
+}
+
+.pricing-features {
+    list-style: none;
+    text-align: left;
+    margin: 20px 0 30px;
+    flex-grow: 1;
+}
+
+.pricing-features li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pricing-features li.disabled {
+    color: var(--gray-color);
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.pricing-card .btn {
+    width: 100%;
+    justify-content: center;
+}

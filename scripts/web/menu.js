@@ -55,13 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             submitBtn.disabled = true;
             
-            // Simulación de envío
-            setTimeout(() => {
-                alert('¡Gracias por contactarnos! Te responderemos en menos de 24 horas.');
-                contactForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
         });
     }
     
@@ -96,46 +89,81 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateStats);
     animateStats(); // Comprobar al cargar la página
 });
-// --- Ocultar/mostrar header según scroll ---
-let lastScrollY2 = window.scrollY;
-const header = document.querySelector('.main-header');
+// --- Lógica del Header y Selección de Planes (Versión Limpia) ---
+
+let scrollPrevio = window.scrollY;
+const elHeader = document.querySelector('.main-header');
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
+    const scrollActual = window.scrollY;
 
-    let lastScrollY2 = window.scrollY;
-const header = document.querySelector('.main-header');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-
-    // Cuando estás arriba del todo, el header siempre visible
-    if (currentScroll <= 0) {
-        header.classList.remove('hide-header');
-        lastScrollY2 = currentScroll;
-        return;
+    // Si estamos arriba, el header se queda fijo
+    if (scrollActual <= 0) {
+        elHeader.classList.remove('hide-header');
+    } 
+    // Si bajamos más de 80px y vamos hacia abajo, lo ocultamos
+    else if (scrollActual > scrollPrevio && scrollActual > 80) {
+        elHeader.classList.add('hide-header');
+    } 
+    // Si subimos, lo mostramos
+    else {
+        elHeader.classList.remove('hide-header');
     }
 
-    // Lógica normal de ocultar/mostrar
-    if (currentScroll > lastScrollY2) {
-        header.classList.add('hide-header');   // Ocultar al bajar
-    } else {
-        header.classList.remove('hide-header'); // Mostrar al subir
-    }
-
-    lastScrollY2 = currentScroll;
+    scrollPrevio = scrollActual;
 });
 
-
-    lastScrollY2 = currentScroll;
-});
-// Lógica para pre-seleccionar el plan en el formulario
-document.querySelectorAll('.select-plan').forEach(button => {
-    button.addEventListener('click', function() {
-        const planName = this.getAttribute('data-plan');
-        const selector = document.getElementById('planSelector');
-        if(selector) {
-            selector.value = planName;
+// Esta función busca todos los botones de los planes y los conecta con el formulario
+document.querySelectorAll('.select-plan').forEach(boton => {
+    boton.addEventListener('click', function() {
+        // Lee el nombre del plan (Personal, Empresa SME o Corporate)
+        const nombreDelPlan = this.getAttribute('data-plan');
+        const selectFormulario = document.getElementById('planSelector');
+        
+        if(selectFormulario) {
+            // Cambia el valor del desplegable del formulario automáticamente
+            selectFormulario.value = nombreDelPlan;
+            
+            // Efecto visual: el selector se pone azul claro un segundo para avisar del cambio
+            selectFormulario.style.backgroundColor = "#e1f5fe";
+            selectFormulario.style.transition = "background-color 0.5s ease";
+            
+            setTimeout(() => { 
+                selectFormulario.style.backgroundColor = "white"; 
+            }, 600);
         }
     });
 });
+// --- Validación del Formulario de Contacto ---
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Detenemos el envío por defecto
+
+        // Obtenemos los valores
+        const plan = document.getElementById('planSelector').value;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+
+        // 1. Validación silenciosa: Si algo falla, el formulario no se envía, 
+        // pero solo avisamos si el usuario realmente intenta algo mal.
+        if (!plan || name.length < 3 || !email.includes('@')) {
+            // Aquí puedes añadir un borde rojo a los inputs en vez de alertas
+            alert("Por favor, revisa que todos los campos sean correctos (Plan, Nombre y Email).");
+            return; // EXIT: Aquí el código se detiene, no llega a la alerta de éxito
+        }
+
+        // 2. Si llega aquí, es que todo está OK. Mostramos la ALERTA DE ÉXITO.
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+        setTimeout(() => {
+            alert('¡Gracias, ' + name + '! Hemos recibido tu solicitud para el plan ' + plan + '. Te contactaremos en menos de 24 horas.');
+            contactForm.reset();
+            submitBtn.innerHTML = originalText;
+        }, 1500);
+    });
+}

@@ -763,7 +763,86 @@ h1, h2, h3, h4 {
     text-decoration: line-through;
 }
 
-.pricing-card .btn {
-    width: 100%;
+/* --- TOGGLE MENSUAL / ANUAL --- */
+.pricing-toggle {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 14px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.toggle-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--gray-color);
+    transition: var(--transition);
+}
+
+.toggle-label.active {
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    inset: 0;
+    background: #c8d8f8;
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .3s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: var(--primary-color);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+    transform: translateX(24px);
+}
+
+.save-badge {
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.price-annual {
+    font-size: 0.82rem;
+    color: #16a34a;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.price-annual.hidden {
+    display: none;
 }

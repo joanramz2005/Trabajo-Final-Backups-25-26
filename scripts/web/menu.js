@@ -134,7 +134,31 @@ document.querySelectorAll('.select-plan').forEach(boton => {
         }
     });
 });
-// --- Validación del Formulario de Contacto ---
+// --- TOGGLE MENSUAL / ANUAL ---
+const billingToggle = document.getElementById('billingToggle');
+
+if (billingToggle) {
+    const prices = {
+        personal: { m: '14,90€', a: '12,40€' },
+        sme:      { m: '44,90€', a: '37,40€' },
+        corp:     { m: '89,90€', a: '74,90€' }
+    };
+
+    billingToggle.addEventListener('change', () => {
+        const annual = billingToggle.checked;
+
+        document.getElementById('lbl-monthly').classList.toggle('active', !annual);
+        document.getElementById('lbl-annual').classList.toggle('active', annual);
+
+        document.getElementById('price-personal').textContent = annual ? prices.personal.a : prices.personal.m;
+        document.getElementById('price-sme').textContent      = annual ? prices.sme.a      : prices.sme.m;
+        document.getElementById('price-corp').textContent     = annual ? prices.corp.a     : prices.corp.m;
+
+        ['personal', 'sme', 'corp'].forEach(p => {
+            document.getElementById('annual-' + p).classList.toggle('hidden', !annual);
+        });
+    });
+}
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {

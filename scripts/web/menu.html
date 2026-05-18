@@ -135,12 +135,23 @@
                 <p class="section-subtitle">Selecciona la protección que mejor se adapte a tu empresa</p>
             </div>
 
+            <div class="pricing-toggle">
+                <span class="toggle-label active" id="lbl-monthly">Mensual</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="billingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label" id="lbl-annual">Anual</span>
+                <span class="save-badge">Ahorra 2 meses</span>
+            </div>
+
             <div class="pricing-container">
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <i class="fas fa-user-shield"></i>
                         <h3>Personal</h3>
-                        <div class="price">14,90€<span>/mes</span></div>
+                        <div class="price"><span id="price-personal">14,90€</span><span>/mes</span></div>
+                    <div class="price-annual hidden" id="annual-personal">Facturado anualmente: 148,80€</div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check-circle"></i> 1 Equipo Windows</li>
@@ -156,7 +167,8 @@
                     <div class="pricing-header">
                         <i class="fas fa-building"></i>
                         <h3>Empresa SME</h3>
-                        <div class="price">44,90€<span>/mes</span></div>
+                        <div class="price"><span id="price-sme">44,90€</span><span>/mes</span></div>
+                    <div class="price-annual hidden" id="annual-sme">Facturado anualmente: 448,80€</div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check-circle"></i> Hasta 5 Equipos</li>
@@ -171,7 +183,8 @@
                     <div class="pricing-header">
                         <i class="fas fa-network-wired"></i>
                         <h3>Corporate</h3>
-                        <div class="price">89,90€<span>/mes</span></div>
+                        <div class="price"><span id="price-corp">89,90€</span><span>/mes</span></div>
+                    <div class="price-annual hidden" id="annual-corp">Facturado anualmente: 898,80€</div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check-circle"></i> Equipos Ilimitados</li>
@@ -227,9 +240,9 @@
                             <select id="planSelector" required
                                 style="width: 100%;height: 40px; border: 1px solid var(--gray-light); border-radius: var(--radius); background-color: white; color: var(--gray-color); outline: none; cursor: pointer;">
                                 <option value="" disabled selected>Selecciona tu plan de backup</option>
-                                <option value="Personal">Plan Personal - 19€/mes</option>
-                                <option value="Empresa SME">Plan Empresa SME - 49€/mes</option>
-                                <option value="Corporate">Plan Corporate - 99€/mes</option>
+                                <option value="Personal">Plan Personal - 14,90€/mes</option>
+                                <option value="Empresa SME">Plan Empresa SME - 44,90€/mes</option>
+                                <option value="Corporate">Plan Corporate - 89,90€/mes</option>
                             </select>
                         </div>
                         <div class="form-group"><input type="text" id="name" placeholder="Nombre completo" required>
